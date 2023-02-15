@@ -1,10 +1,12 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-export default function hearder() {
+
+export default function hearder(props) {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
   <div className="container-fluid">
-    <a className="navbar-brand" href="#">TODDOS List</a>
+    <a className="navbar-brand" href="#">{props.Title}</a>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
@@ -18,13 +20,22 @@ export default function hearder() {
         </li>
       </ul>
       
-      <form className="d-flex" role="search">
+     {props.searchBar ?<form className="d-flex" role="search">
        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input>
         <button className="btn btn-outline-success" type="submit">Search</button>
       </form>
-      
+      : ""}
     </div>
   </div>
 </nav>
   )
+}
+
+hearder.defaultProbs={
+  Title: "my title",
+  searchBar: true
+}
+hearder.propTypes={
+  Title: PropTypes.string,
+  searchBar: PropTypes.bool.isRequired
 }

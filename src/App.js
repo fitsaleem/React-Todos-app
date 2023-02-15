@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import Header from './myComponents/Hearder'
 import  {Todos} from './myComponents/Todos';
@@ -9,7 +9,7 @@ function App() {
   
   return (
     <>
-      <Header/>
+      <Header Title="TODOS" searchBar="{false}"/>
       <Todos/>
       <TodoList/>
       <Fotter/>
@@ -18,3 +18,4 @@ function App() {
 }
 
 export default App;
+
